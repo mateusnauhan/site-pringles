@@ -52,29 +52,34 @@ button{
 }
 
 .slider {
+    width: 100%;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
 
     .slide{
+        width: 100%;
+        background: linear-gradient(100deg, #2AC4FF 2.57%, #0D88BB 95.91%);
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: red;
         gap: 4vw;
         padding: 4vw 4vw 4vw 0;
-
-
+        position: absolute;
+        transition: opacity .3s, clip-path .3s;
+        clip-path: circle(0% at 89% 50%);
+        opacity: 0;
+        
+        
         .imgCirculo {
             margin-left: -20%;
-            width: 50vw;
+            width: 40vw;
         }
 
         .conteudo {
             h2{
                 font-size: 5vw;
             }
-
+            
             p {
                 width: 80%;
                 margin-bottom: clamp(24px, 2vw, 40px);
@@ -88,10 +93,27 @@ button{
             img {
                 width: 14vw;
             }
-
+            
             img:nth-child(2) {
                 scale: 0.8;
             }
         }
+    }
+
+    .slide.ativo {
+        clip-path: circle(100vw at 89% 50%);
+        opacity: 1;
+    }       
+
+    .slide:nth-child(2) {
+        background: linear-gradient(100deg, #FF849D 2.57%, #C5566A 95.91%);
+    }
+
+    .slide:nth-child(3) {
+        background: linear-gradient(100deg, #FF8917 2.57%, #D06000 95.91%);
+    }
+
+    .slide:nth-child(4) {
+        background: linear-gradient(100deg, #008E5E 2.57%, #005235 95.91%);
     }
 }
