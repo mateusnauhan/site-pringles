@@ -55,6 +55,18 @@ button{
     width: 100%;
     height: 100vh;
     display: flex;
+    position: relative;
+    overflow: hidden;
+
+    .logoFundo{
+        position: absolute;
+        z-index: 3;
+        right: -12%;
+        bottom: -22%;
+        width: 50vw;
+        mix-blend-mode: color-dodge;
+
+    }
 
     .slide{
         width: 100%;
@@ -101,6 +113,8 @@ button{
         }
 
         .latas {
+            position: relative;
+            z-index: 4;
             display: flex;
             
             img {
